@@ -185,6 +185,7 @@ class Repo:
         @return:
         '''
         self.checkout_2_branch(branch)
+        self.pull()
 
         commit_log = PyGit.Git(self.path).log('--pretty=%h #@_@# %an #@_@# %s', max_count=50)
         commit_list = commit_log.split('\n')
